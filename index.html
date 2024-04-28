@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Add Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="bootstrap-5.3.3-dist/css/bootstrap.css">
+  <style>
+    /* Set the background color and font for the entire page */
+    body {
+      background: #FFFDD0;
+      font-family: 'Futura URW Extra Bold', Arial Block, sans-serif;
+      font-weight: bold;
+    }
+
+    /* Define a grid container with 6 rows and a gap of 50px */
+    .container {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto auto auto auto;
+      gap: 50px;
+    }
+
+    /* Style the logo area, which is placed in the first row of the grid */
+    .logo {
+      padding: 1em;
+      margin-left: 30em;
+      margin-right: 30em;
+      grid-row: 1;
+    }
+
+    /* Ensure the logo image fits within its container */
+    .logo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    /* Style the header text, which is placed in the second row of the grid */
+    .header {
+      color: #880015;
+      text-align: center;
+      font-size: 64pt;
+      padding: 1em;
+      margin-left: 0em;
+      margin-right: 0em;
+      margin-top: -1em;
+      margin-bottom: -1.5em;
+      grid-row: 2;
+    }
+
+    /* Style the call-to-action (CTA) section, which is a 4-column grid placed in the third row of the main grid */
+    .cta {
+      color: #880015;
+      text-align: center;
+      padding: 2em;
+      margin-left: 15em;
+      margin-right: 15em;
+      grid-row: 3;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+    }
+
+    /* Style the primary button */
+    .btn-primary {
+      background-color: #8792D8 !important;
+      color: #FFFFFF !important;
+      border-color: #8792D8;
+       !important;
+    }
+
+    /* Change the primary button's color when hovered over */
+    .btn-primary:hover {
+      background-color: #880015 !important;
+      color: #FFFFFF !important;
+      border-color: #880015;
+       !important;
+    }
+
+    /* Style the gallery section, which is placed in the fourth row of the main grid */
+    .gallery {
+      background: #8792D8;
+      color: #880015;
+      border-style: solid;
+      border-width: 5px;
+      border-color: #000000;
+      text-align: center;
+      padding-top: 5em;
+      padding-bottom: 25em;
+      margin-left: 15em;
+      margin-right: 15em;
+      grid-row: 4;
+    }
+
+    /* Style the topics section, which is a 4-column grid placed in the fifth row of the main grid */
+    .topics {
+      text-align: center;
+      font-size: 24px;
+      padding: 5em;
+      margin-left: 10em;
+      margin-right: 10em;
+      margin-top: -5em;
+      grid-row: 5;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 10px;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    /* Change the color of a topic when hovered over */
+    .topic:hover {
+      color: #880015;
+      /* Change color on hover */
+    }
+
+    /* Style the main content section, which is placed in the sixth row of the main grid */
+    .main-content {
+      background: #8792D8;
+      color: #880015;
+      border-style: solid;
+      border-width: 5px;
+      border-color: #000000;
+      text-align: center;
+      padding-top: 5em;
+      padding-bottom: 50em;
+      margin-left: 5em;
+      margin-right: 5em;
+      margin-top: -8em;
+      grid-row: 6;
+    }
+
+    /* Style the footer, which is placed in the seventh row of the main grid */
+    .footer {
+      background: #8792D8;
+      color: #880015;
+      border-style: solid;
+      border-width: 5px;
+      border-color: #000000;
+      text-align: center;
+      padding: 5em;
+      margin-left: 5em;
+      margin-right: 5em;
+      grid-row: 7;
+    }
+
+    /* Styles for screens with a maximum width of 576px */
+    @media (max-width: 576px) {
+
+      /* Adjust the position of the body */
+      body {
+        position: relative;
+        left: -208px;
+        /* Adjust as needed */
+      }
+
+      /* Adjust the margins of the logo */
+      .logo {
+        margin-left: 15em;
+        margin-right: 15em;
+      }
+
+      /* Adjust the margins of the header */
+      .header {
+        margin-left: 1em;
+        margin-right: 1em;
+      }
+
+      /* Adjust the margins of the call-to-action section */
+      .cta {
+        margin-left: 20em;
+        margin-right: 20em;
+      }
+
+      /* Adjust the margins of the gallery */
+      .gallery {
+        margin-left: 15em;
+        margin-right: 15em;
+      }
+
+      /* Adjust the margins of the topics section */
+      .topics {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+
+      /* Adjust the margins of the main content section */
+      .main-content {
+        margin-left: 15em;
+        margin-right: 15em;
+      }
+
+      /* Adjust the margins of the footer */
+      .footer {
+        margin-left: 15em;
+        margin-right: 15em;
+      }
+    }
+
+    /* Styles for screens with a minimum width of 576px and a maximum width of 768px */
+    @media (min-width: 576px) and (max-width: 768px) {
+
+      /* Adjust the position of the body */
+      body {
+        position: relative;
+        left: -208px;
+        /* Adjust as needed */
+      }
+
+      /* Adjust the margins of the logo */
+      .logo {
+        margin-left: 12em;
+        margin-right: 12em;
+      }
+
+      /* Adjust the margins of the header */
+      .header {
+        margin-left: 0em;
+        margin-right: 0em;
+      }
+
+      /* Adjust the margins of the call-to-action section */
+      .cta {
+        margin-left: 10em;
+        margin-right: 10em;
+      }
+
+      /* Adjust the margins of the gallery */
+      .gallery {
+        margin-left: 10em;
+        margin-right: 10em;
+      }
+
+      /* Adjust the margins of the topics section */
+      .topics {
+        margin-left: 4em;
+        margin-right: 4em;
+      }
+
+      /* Adjust the margins of the main content section */
+      .main-content {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+
+      /* Adjust the margins of the footer */
+      .footer {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+    }
+
+    /* Styles for screens with a minimum width of 768px and a maximum width of 992px */
+    @media (min-width: 768px) and (max-width: 992px) {
+
+      /* Adjust the position of the body */
+      body {
+        position: relative;
+        left: -165px;
+        /* Adjust as needed */
+      }
+
+      /* Adjust the margins of the logo */
+      .logo {
+        margin-left: 25em;
+        margin-right: 25em;
+      }
+
+      /* Adjust the margins of the header */
+      .header {
+        margin-left: 0em;
+        margin-right: 0em;
+      }
+
+      /* Adjust the margins of the call-to-action section */
+      .cta {
+        margin-left: 9em;
+        margin-right: 9em;
+      }
+
+      /* Adjust the margins of the gallery */
+      .gallery {
+        margin-left: 9em;
+        margin-right: 9em;
+      }
+
+      /* Adjust the margins of the topics section */
+      .topics {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+
+      /* Adjust the margins of the main content section */
+      .main-content {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+
+      /* Adjust the margins of the footer */
+      .footer {
+        margin-left: 6em;
+        margin-right: 6em;
+      }
+    }
+
+    /* Styles for screens with a minimum width of 992px and a maximum width of 1200px */
+    @media (min-width: 992px) and (max-width: 1200px) {
+
+      /* Adjust the position of the body */
+      body {
+        position: relative;
+        left: -92px;
+        /* Adjust as needed */
+      }
+
+      /* Adjust the margins of the logo */
+      .logo {
+        margin-left: 24em;
+        margin-right: 24em;
+      }
+
+      /* Adjust the margins of the header */
+      .header {
+        margin-left: 0em;
+        margin-right: 0em;
+      }
+
+      /* Adjust the margins of the call-to-action section */
+      .cta {
+        margin-left: 12em;
+        margin-right: 12em;
+      }
+
+      /* Adjust the margins of the gallery */
+      .gallery {
+        margin-left: 12em;
+        margin-right: 12em;
+      }
+
+      /* Adjust the margins of the topics section */
+      .topics {
+        margin-left: 8em;
+        margin-right: 8em;
+      }
+
+      /* Adjust the margins of the main content section */
+      .main-content {
+        margin-left: 4em;
+        margin-right: 4em;
+      }
+
+      /* Adjust the margins of the footer */
+      .footer {
+        margin-left: 4em;
+        margin-right: 4em;
+      }
+    }
+
+    /* Styles for screens with a minimum width of 1200px and a maximum width of 1400px */
+    @media (min-width: 1200px) and (max-width: 1400px) {
+
+      /* Adjust the position of the body */
+      body {
+        position: relative;
+        left: -40px;
+        /* Adjust as needed */
+      }
+
+      /* Adjust the margins of the logo */
+      .logo {
+        margin-left: 30em;
+        margin-right: 30em;
+      }
+
+      /* Adjust the margins of the header */
+      .header {
+        margin-left: 0em;
+        margin-right: 0em;
+      }
+
+      /* Adjust the margins of the call-to-action section */
+      .cta {
+        margin-left: 15em;
+        margin-right: 15em;
+      }
+
+      /* Adjust the margins of the gallery */
+      .gallery {
+        margin-left: 15em;
+        margin-right: 15em;
+      }
+
+      /* Adjust the margins of the topics section */
+      .topics {
+        margin-left: 10em;
+        margin-right: 10em;
+      }
+
+      /* Adjust the margins of the main content section */
+      .main-content {
+        margin-left: 5em;
+        margin-right: 5em;
+      }
+
+      /* Adjust the margins of the footer */
+      .footer {
+        margin-left: 5em;
+        margin-right: 5em;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Main container for the page -->
+  <div class="container">
+    <!-- Logo section -->
+    <div class="logo">
+      <!-- Logo image -->
+      <img src="autismacceptanceblack.svg" alt="Logo" class="logo-img">
+    </div>
+
+    <!-- Header section -->
+    <h1 class="header">AUTISM ACCEPTANCE</h1>
+
+    <!-- Call-to-action (CTA) section -->
+    <div class="cta">
+      <!-- Each div within the CTA section contains a button -->
+      <div>
+        <button type="button" class="btn btn-primary">Join the Cause</button>
+      </div>
+      <!-- Add similar code for other CTAs -->
+      <div>
+        <button type="button" class="btn btn-primary">Learn More</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary">Donate Now</button>
+      </div>
+      <div>
+        <button type="button" class="btn btn-primary">Share Your Story</button>
+      </div>
+    </div>
+
+    <!-- Gallery section with a carousel of images -->
+    <div class="gallery">
+      <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+        <!-- Carousel indicators (the little dots at the bottom of the carousel) -->
+        <div class="carousel-indicators">
+          <!-- Each button corresponds to a slide in the carousel -->
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <!-- Carousel inner section containing the slides -->
+        <div class="carousel-inner">
+          <!-- Each div within the carousel inner section is a slide -->
+          <div class="carousel-item active">
+            <img src="1.jpg" class="d-block w-100" alt="Image 1">
+          </div>
+          <div class="carousel-item">
+            <img src="2.jpg" class="d-block w-100" alt="Image 2">
+          </div>
+          <div class="carousel-item">
+            <img src="3.jpg" class="d-block w-100" alt="Image 3">
+          </div>
+          <div class="carousel-item">
+            <img src="4.jpg" class="d-block w-100" alt="Image 4">
+          </div>
+          <div class="carousel-item">
+            <img src="5.jpg" class="d-block w-100" alt="Image 5">
+          </div>
+        </div>
+        <!-- Carousel controls (the previous and next buttons) -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Topics section -->
+    <div class="topics">
+      <!-- Each div within the topics section represents a topic -->
+      <div class="topic">
+        <!-- Bootstrap icon for the topic -->
+        <i class="bi bi-mortarboard-fill"></i>
+        <!-- Topic text -->
+        <p>Education</p>
+      </div>
+      <div class="topic">
+        <i class="bi bi-briefcase-fill"></i>
+        <p>Employment</p>
+      </div>
+      <div class="topic">
+        <i class="bi bi-house-heart-fill"></i>
+        <p>Social Services</p>
+      </div>
+      <div class="topic">
+        <i class="bi bi-people-fill"></i>
+        <p>Social Gatherings</p>
+      </div>
+      <!-- Add similar code for other topics -->
+    </div>
+
+    <!-- Main content section -->
+    <div class="main-content">
+      <p>This is a web page about autism acceptance.
+        <br>
+        This page will show you the many problems that autistics face in Education, Employment, Social Services, and Social Gatherings and provide solutions.
+        <br>
+        We believe that these solutions will promote autism aceptance and achieve the educational equality, inclusive hiring practices, support systems, and overall independence for autistics everywhere.
+        <br>
+        <br>
+        Keywords used for SEO:
+        Autism
+        Equality
+        Inclusion
+        Support
+        Independence
+        Acceptance
+      </p>
+    </div>
+
+    <!-- Footer section -->
+    <div class="footer">
+      <p>Footer
+        <br>
+        <br>
+        Additional Information goes here.
+      </p>
+    </div>
+  </div>
+  <!-- Add Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+
+</body>
+
+</html>
